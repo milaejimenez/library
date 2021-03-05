@@ -1,12 +1,13 @@
 
-let myLibrary = []
-const books = document.querySelector(".books")
+const myLibrary = []
+const library = document.querySelector(".library")
 const button = document.querySelector(".add_book")
+const books = document.querySelector(".books")
 const formular = document.querySelector(".formular")
-let title = document.getElementById("title");
-let author = document.getElementById("author");
-let pages = document.getElementById("pages");
-let read = document.getElementById("read");
+const title = document.getElementById("title");
+const author = document.getElementById("author");
+const pages = document.getElementById("pages");
+const read = document.getElementById("read");
 const checkRead = function() {
 	if(read.checked) {
 		return 'Read'
@@ -36,24 +37,24 @@ function display() {
 					 	   <p class="read_status">${last.haveRead}</p>
 					 	   <button class="remove">Remove</button>
 					 	   <button class="change">Change status</button>`;
+	lastAdded.classList.add("book_item")
 	books.appendChild(lastAdded);
 	lastAdded.setAttribute('data-set', myLibrary.length - 1);
 	bookElements.push(lastAdded);
 }
 
 button.addEventListener('click', function () {
-	formular.style.display = 'block'
+	formular.style.display = 'flex';
+	button.style.display = 'none';
 })
 
-function changeStatus() {
-
-}
-
-books.addEventListener("click", function(event) {
+library.addEventListener("click", function(event) {
 	const thisBook = event.target.parentElement;
 	const bookNumber = parseInt(thisBook.getAttribute('data-set'));
      if ( event.target.className === 'save_book') {
           addBookToLibrary(title, author, pages, checkRead());
+          formular.style.display = 'none'
+          button.style.display = 'block'
           display()
      } if (event.target.className === 'remove') {;
 		thisBook.remove();

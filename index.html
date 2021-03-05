@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Library Project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Library Project</h1>
+	</header>
+	
+	<main class="library">
+
+		<button class="add_book">New Book</button>
+
+		<div class="formular">
+			<input type="text" id="title" placeholder="title" required/>
+			<input type="text" id="author" placeholder="author" required/>
+		 	<input type="text" id="pages" placeholder="pages" required/>
+			<label for="read"> Read: </label>
+			<input type="checkbox" id="read" name="read" value="Read">
+			<button class="save_book">Save</button>
+		</div>
+
+		<div class="books"> </div>
+	</main>
+
+	<footer>
+	<p>This website is part of The Odin's Project curriculum to learn Web Development. See the code <a href="#code">here</a></p>
+	</footer>
+
+<script type="text/javascript" src="books.js"></script>
+</body>
+
+	
+</html>
